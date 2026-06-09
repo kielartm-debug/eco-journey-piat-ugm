@@ -45,6 +45,18 @@ def load_css():
             background: transparent;
         }
 
+        #MainMenu,
+        footer,
+        [data-testid="stToolbar"],
+        [data-testid="stDecoration"],
+        [data-testid="stStatusWidget"],
+        [data-testid="stDeployButton"],
+        [data-testid="stAppDeployButton"],
+        [data-testid="stToolbarActions"] {
+            display: none !important;
+            visibility: hidden !important;
+        }
+
         [data-testid="stSidebar"] {
             background: linear-gradient(180deg, #26392b 0%, #40563d 100%);
             border-right: 1px solid rgba(255, 255, 255, 0.12);
