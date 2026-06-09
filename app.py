@@ -52,7 +52,27 @@ def load_css():
         [data-testid="stStatusWidget"],
         [data-testid="stDeployButton"],
         [data-testid="stAppDeployButton"],
-        [data-testid="stToolbarActions"] {
+        [data-testid="stToolbarActions"],
+        [data-testid="stProfileBadge"],
+        [data-testid="stViewerBadge"],
+        [data-testid="stCommunityCloudBadge"],
+        [data-testid="stBottomRightWidget"],
+        div[class*="viewerBadge"],
+        div[class*="ViewerBadge"],
+        div[class*="profileBadge"],
+        div[class*="ProfileBadge"],
+        div[class*="streamlitBadge"],
+        div[class*="StreamlitBadge"],
+        a[href*="streamlit.io/cloud"],
+        a[href*="github.com/kielartm-debug"] {
+            display: none !important;
+            visibility: hidden !important;
+        }
+
+        div:has(> iframe[src*="streamlit"]),
+        div:has(> a[href*="streamlit.io"]),
+        div:has(button[aria-label*="profile" i]),
+        div:has(button[title*="profile" i]) {
             display: none !important;
             visibility: hidden !important;
         }
