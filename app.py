@@ -77,6 +77,23 @@ def load_css():
             visibility: hidden !important;
         }
 
+        [data-testid="collapsedControl"] {
+            display: flex !important;
+            visibility: visible !important;
+            position: fixed !important;
+            top: 0.75rem !important;
+            left: 0.75rem !important;
+            z-index: 999999 !important;
+            background: #fff8df !important;
+            border: 1px solid rgba(49, 70, 52, 0.26) !important;
+            border-radius: 999px !important;
+            box-shadow: 0 10px 24px rgba(49, 70, 52, 0.18) !important;
+        }
+
+        [data-testid="collapsedControl"] button {
+            color: #203225 !important;
+        }
+
         [data-testid="stSidebar"] {
             background: linear-gradient(180deg, #26392b 0%, #40563d 100%);
             border-right: 1px solid rgba(255, 255, 255, 0.12);
