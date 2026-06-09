@@ -47,20 +47,22 @@ def load_css():
 
         #MainMenu,
         footer,
-        [data-testid="stToolbar"],
         [data-testid="stDecoration"],
         [data-testid="stStatusWidget"],
         [data-testid="stDeployButton"],
         [data-testid="stAppDeployButton"],
-        [data-testid="stToolbarActions"],
         [data-testid="stProfileBadge"],
         [data-testid="stViewerBadge"],
         [data-testid="stCommunityCloudBadge"],
         [data-testid="stBottomRightWidget"],
+        [data-testid="stManageAppButton"],
+        [data-testid="stManageApp"],
         div[class*="viewerBadge"],
         div[class*="ViewerBadge"],
         div[class*="profileBadge"],
         div[class*="ProfileBadge"],
+        div[class*="manageApp"],
+        div[class*="ManageApp"],
         div[class*="streamlitBadge"],
         div[class*="StreamlitBadge"],
         a[href*="streamlit.io/cloud"],
@@ -71,6 +73,8 @@ def load_css():
 
         div:has(> iframe[src*="streamlit"]),
         div:has(> a[href*="streamlit.io"]),
+        div:has(button[aria-label*="manage" i]),
+        div:has(button[title*="manage" i]),
         div:has(button[aria-label*="profile" i]),
         div:has(button[title*="profile" i]) {
             display: none !important;
