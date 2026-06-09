@@ -65,6 +65,11 @@ def load_css():
         [data-testid="stSidebar"] input {
             background: rgba(255, 255, 255, 0.12);
             border: 1px solid rgba(255, 255, 255, 0.22);
+            color: #203225 !important;
+        }
+
+        [data-testid="stSidebar"] input::placeholder {
+            color: rgba(32, 50, 37, 0.58) !important;
         }
 
         [data-testid="stSidebar"] .stRadio div[role="radiogroup"] {
