@@ -3,7 +3,6 @@ import html
 import random
 from pathlib import Path
 
-import pandas as pd
 import streamlit as st
 from PIL import Image
 
@@ -32,68 +31,6 @@ def load_css():
 
         .stApp {
             background: var(--cream);
-            color: var(--text);
-        }
-
-        [data-testid="stAppViewContainer"],
-        [data-testid="stMain"],
-        [data-testid="stMainBlockContainer"] {
-            background: var(--cream) !important;
-            color: var(--text) !important;
-        }
-
-        [data-testid="stMain"] h1,
-        [data-testid="stMain"] h2,
-        [data-testid="stMain"] h3,
-        [data-testid="stMain"] h4,
-        [data-testid="stMain"] h5,
-        [data-testid="stMain"] h6,
-        [data-testid="stMain"] p,
-        [data-testid="stMain"] li,
-        [data-testid="stMain"] span,
-        [data-testid="stMain"] label,
-        [data-testid="stMain"] div[data-testid="stMarkdownContainer"],
-        [data-testid="stMain"] div[data-testid="stMarkdownContainer"] * {
-            color: var(--text);
-        }
-
-        [data-testid="stMain"] [data-testid="stWidgetLabel"],
-        [data-testid="stMain"] [data-testid="stWidgetLabel"] *,
-        [data-testid="stMain"] [data-testid="stRadio"] label,
-        [data-testid="stMain"] [data-testid="stRadio"] label *,
-        [data-testid="stMain"] [data-testid="stSlider"] label,
-        [data-testid="stMain"] [data-testid="stSlider"] label *,
-        [data-testid="stMain"] [data-testid="stTextInput"] label,
-        [data-testid="stMain"] [data-testid="stTextInput"] label *,
-        [data-testid="stMain"] [data-testid="stTextArea"] label,
-        [data-testid="stMain"] [data-testid="stTextArea"] label * {
-            color: var(--text) !important;
-        }
-
-        [data-testid="stMain"] [data-testid="stTextInput"] input,
-        [data-testid="stMain"] [data-testid="stTextArea"] textarea {
-            background: #fffdf4 !important;
-            color: var(--text) !important;
-            border: 1px solid rgba(49, 70, 52, 0.28) !important;
-        }
-
-        [data-testid="stMain"] [data-testid="stTextInput"] input::placeholder,
-        [data-testid="stMain"] [data-testid="stTextArea"] textarea::placeholder {
-            color: rgba(30, 36, 28, 0.58) !important;
-        }
-
-        [data-testid="stMain"] [data-testid="stRadio"] div[role="radiogroup"] label {
-            background: rgba(255, 253, 244, 0.78);
-            border-radius: 10px;
-        }
-
-        [data-testid="stMain"] [data-testid="stImageCaption"],
-        [data-testid="stMain"] [data-testid="stImageCaption"] * {
-            color: #314634 !important;
-        }
-
-        [data-testid="stMain"] [data-testid="stDataFrame"] {
-            background: #fffdf4;
             color: var(--text);
         }
 
@@ -901,18 +838,6 @@ def page_quiz(visitor_name):
             st.info("Baik! Pemahamanmu sudah bagus. Baca ulang bagian tertentu agar makin mantap.")
         else:
             st.warning("Ayo baca ulang materi Napak Tilas dan Fun Fact, lalu coba quiz ini lagi.")
-
-        review_rows = []
-        for number, (answer, item) in enumerate(zip(answers, questions), start=1):
-            review_rows.append(
-                {
-                    "Soal": number,
-                    "Jawaban Kamu": answer,
-                    "Jawaban Benar": item["answer"],
-                    "Status": "Benar" if answer == item["answer"] else "Perlu dicek",
-                }
-            )
-        st.dataframe(pd.DataFrame(review_rows), hide_index=True, use_container_width=True)
 
 
 def page_feedback(visitor_name):
